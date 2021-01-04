@@ -34,4 +34,11 @@ public class UserRegistrationGradleTest {
 		assertEquals(true, "mobileUserInput");
 	}
 	
+	public static void UC5Rule1() {
+		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
+		boolean mobileUserInput = userRegistrationGradle.UC5toUC8("Komal");
+		//Assert Statement
+		assertEquals(true, "passwordUserInput");
+	}
+	
 }
