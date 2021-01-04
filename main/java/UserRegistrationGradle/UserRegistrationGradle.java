@@ -12,4 +12,11 @@ public class UserRegistrationGradle {
 		return patternValidity;		
 	}
 	
+	public static boolean UC2(String lastNameUserInput) {		
+		Pattern lastName = Pattern.compile("[A-Z]{1}[a-z]{2,}$");  
+		Matcher match = lastName.matcher(lastNameUserInput);  
+		boolean patternValidity = match.matches();
+		return patternValidity;	
+	}
+	
 }
