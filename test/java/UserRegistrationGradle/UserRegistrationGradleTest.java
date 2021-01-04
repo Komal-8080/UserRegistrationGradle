@@ -48,4 +48,10 @@ public class UserRegistrationGradleTest {
 		assertEquals(true, "passwordUserInput");
 	}
 	
+	public static void UC7PasswordRule3() {
+		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
+		boolean mobileUserInput = userRegistrationGradle.UC5toUC8("Komal");
+		//Assert Statement
+		assertEquals(true, "passwordUserInput");
+	}
 }
