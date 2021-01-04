@@ -20,4 +20,11 @@ public class UserRegistrationGradleTest {
 		assertEquals(true, "lastNameUserInput");
 	}
 	
+	public static void UC3() {
+		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
+		boolean emailUserInput = userRegistrationGradle.UC3("abc.xyz@bl.co.in");
+		//Assert Statement
+		assertEquals(true, "emailUserInput");
+	}
+	
 }
