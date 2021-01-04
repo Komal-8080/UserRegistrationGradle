@@ -19,4 +19,11 @@ public class UserRegistrationGradle {
 		return patternValidity;	
 	}
 	
+	public static boolean UC3(String emailUserInput) {
+		Pattern email = Pattern.compile("^[a-zA-Z]{3}\\.[a-zA-Z]{1,}@[a-zA-Z]{2}\\.[a-zA-Z]{2}\\.[a-zA-Z]{1,}$");  
+		Matcher match = email.matcher(emailUserInput);  
+		boolean patternValidity = match.matches();
+		System.out.println(patternValidity);
+		return patternValidity;
+	}
 }
