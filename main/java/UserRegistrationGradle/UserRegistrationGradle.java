@@ -23,7 +23,14 @@ public class UserRegistrationGradle {
 		Pattern email = Pattern.compile("^[a-zA-Z]{3}\\.[a-zA-Z]{1,}@[a-zA-Z]{2}\\.[a-zA-Z]{2}\\.[a-zA-Z]{1,}$");  
 		Matcher match = email.matcher(emailUserInput);  
 		boolean patternValidity = match.matches();
-		System.out.println(patternValidity);
 		return patternValidity;
 	}
+
+	public boolean UC4(String mobileUserInput) {
+		Pattern mobileNumber = Pattern.compile("^[1-9]{2}\\s{1}[0-9]{1}[0-9]{9}$");  
+		Matcher match = mobileNumber.matcher(mobileUserInput);  
+		boolean patternValidity = match.matches();
+		return patternValidity;
+	}	
+	
 }

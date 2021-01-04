@@ -27,4 +27,11 @@ public class UserRegistrationGradleTest {
 		assertEquals(true, "emailUserInput");
 	}
 	
+	public static void UC4() {
+		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
+		boolean mobileUserInput = userRegistrationGradle.UC4("91 8562416354");
+		//Assert Statement
+		assertEquals(true, "mobileUserInput");
+	}
+	
 }
