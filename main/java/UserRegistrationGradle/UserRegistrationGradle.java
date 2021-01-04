@@ -34,8 +34,15 @@ public class UserRegistrationGradle {
 	}	
 	
 	public static boolean UC5toUC8(String passwordUserInput) {
-		Pattern mobileNumber = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}");  
-		Matcher match = mobileNumber.matcher(passwordUserInput);  
+		Pattern password = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}");  
+		Matcher match = password.matcher(passwordUserInput);  
+		boolean patternValidity = match.matches();
+		return patternValidity;
+	}
+	
+	public static boolean UC9(String sampleEmailValidation) {
+		Pattern emailValidation = Pattern.compile("^([a-zA-a0-9\\.\\-\\+]+)@([a-zA-Z0-9\\.]{1,5})([a-zA-Z\\.]+){1,3}([a-zA-Z]{1,3})$");  
+		Matcher match = emailValidation.matcher(sampleEmailValidation);  
 		boolean patternValidity = match.matches();
 		return patternValidity;
 	}

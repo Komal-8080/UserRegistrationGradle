@@ -36,30 +36,53 @@ public class UserRegistrationGradleTest {
 	
 	public static void UC5PasswordRule1() {
 		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
-		boolean mobileUserInput = userRegistrationGradle.UC5toUC8("Komal");
+		boolean passwordUserInput = userRegistrationGradle.UC5toUC8("Komal");
 		//Assert Statement
 		assertEquals(true, "passwordUserInput");
 	}
 	
 	public static void UC6PasswordRule2() {
 		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
-		boolean mobileUserInput = userRegistrationGradle.UC5toUC8("Komal");
+		boolean passwordUserInput = userRegistrationGradle.UC5toUC8("Komal");
 		//Assert Statement
 		assertEquals(true, "passwordUserInput");
 	}
 	
 	public static void UC7PasswordRule3() {
 		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
-		boolean mobileUserInput = userRegistrationGradle.UC5toUC8("Komal");
+		boolean passwordUserInput = userRegistrationGradle.UC5toUC8("Komal");
 		//Assert Statement
 		assertEquals(true, "passwordUserInput");
 	}
 	
 	public static void UC8PasswordRule4() {
 		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
-		boolean mobileUserInput = userRegistrationGradle.UC5toUC8("Komal");
+		boolean passwordUserInput = userRegistrationGradle.UC5toUC8("Komal");
 		//Assert Statement
 		assertEquals(true, "passwordUserInput");
+	}
+	
+	public static void UC9() {
+		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
+		boolean sampleEmailValidation1 = userRegistrationGradle.UC9("abc@yahoo.com");
+		boolean sampleEmailValidation2 = userRegistrationGradle.UC9("abc-100@yahoo.com");
+		boolean sampleEmailValidation3 = userRegistrationGradle.UC9("abc.100@yahoo.com");
+		boolean sampleEmailValidation4 = userRegistrationGradle.UC9("abc111@abc.com");
+		boolean sampleEmailValidation5 = userRegistrationGradle.UC9("abc-100@abc.net");
+		boolean sampleEmailValidation6 = userRegistrationGradle.UC9("abc.100@abc.com.au");
+		boolean sampleEmailValidation7 = userRegistrationGradle.UC9("abc@1.com");
+		boolean sampleEmailValidation8 = userRegistrationGradle.UC9("abc@gmail.com.com");
+		boolean sampleEmailValidation9 = userRegistrationGradle.UC9("abc+100@gmail.com");
+		//Assert Statement
+				assertEquals(true, "sampleEmailValidation1");
+				assertEquals(true, "sampleEmailValidation2");
+				assertEquals(true, "sampleEmailValidation3");
+				assertEquals(true, "sampleEmailValidation4");
+				assertEquals(true, "sampleEmailValidation5");
+				assertEquals(true, "sampleEmailValidation6");
+				assertEquals(true, "sampleEmailValidation7");
+				assertEquals(true, "sampleEmailValidation8");
+				assertEquals(true, "sampleEmailValidation9");				
 	}
 	
 }
