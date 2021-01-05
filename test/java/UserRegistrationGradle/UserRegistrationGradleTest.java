@@ -6,62 +6,102 @@ import java.util.Scanner;
 
 public class UserRegistrationGradleTest {
 	
-	 static String Happy = null;
-	
-	public static void UC1() {
+	static String Happy = null;
+	 	
+	public void UC1() throws UserRegistrationException {
 		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
 		String firstNameUserInput = userRegistrationGradle.UC1("Komal");
-		//Assert Statement
-		assertEquals(Happy, firstNameUserInput);
+		try {			
+			userRegistrationGradle.UC1(Happy);
+			}	
+		catch(UserRegistrationException e) {
+			//Assert Statement
+			assertEquals("Please enter valid first name", e.getMessage());
+			}
 	}
 	
-	public static void UC2() {
+	public static void UC2() throws UserRegistrationException {
 		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
 		String lastNameUserInput = userRegistrationGradle.UC2("Shinde");
-		//Assert Statement
-		assertEquals(Happy, "lastNameUserInput");
+		try {			
+			userRegistrationGradle.UC2(Happy);
+			}	
+		catch(UserRegistrationException e) {
+			//Assert Statement
+			assertEquals("Please enter valid last name", e.getMessage());
+			}
 	}
 	
-	public static void UC3() {
+	public static void UC3() throws UserRegistrationException {
 		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
 		String emailUserInput = userRegistrationGradle.UC3("abc.xyz@bl.co.in");
-		//Assert Statement
-		assertEquals(Happy, "emailUserInput");
+		try {			
+			userRegistrationGradle.UC3(Happy);
+			}	
+		catch(UserRegistrationException e) {
+			//Assert Statement
+			assertEquals("Please enter valid email", e.getMessage());
+			}
 	}
 	
-	public static void UC4() {
+	public static void UC4() throws UserRegistrationException {
 		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
 		String mobileUserInput = userRegistrationGradle.UC4("91 8562416354");
-		//Assert Statement
-		assertEquals(Happy, "mobileUserInput");
+		try {			
+			userRegistrationGradle.UC4(Happy);
+			}	
+		catch(UserRegistrationException e) {
+			//Assert Statement
+			assertEquals("Please enter valid mobile number", e.getMessage());
+			}
 	}
 	
-	public static void UC5PasswordRule1() {
+	public static void UC5PasswordRule1() throws UserRegistrationException {
 		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
 		String passwordUserInput = userRegistrationGradle.UC5toUC8("Komal");
-		//Assert Statement
-		assertEquals(Happy, "passwordUserInput");
+		try {			
+			userRegistrationGradle.UC5toUC8(Happy);
+			}	
+		catch(UserRegistrationException e) {
+			//Assert Statement
+			assertEquals("Please enter valid password", e.getMessage());
+			}
 	}
 	
-	public static void UC6PasswordRule2() {
+	public static void UC6PasswordRule2() throws UserRegistrationException {
 		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
 		String passwordUserInput = userRegistrationGradle.UC5toUC8("Komal");
-		//Assert Statement
-		assertEquals(Happy, "passwordUserInput");
+		try {			
+			userRegistrationGradle.UC5toUC8(Happy);
+			}	
+		catch(UserRegistrationException e) {
+			//Assert Statement
+			assertEquals("Please enter valid password", e.getMessage());
+			}
 	}
 	
-	public static void UC7PasswordRule3() {
+	public static void UC7PasswordRule3() throws UserRegistrationException {
 		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
 		String passwordUserInput = userRegistrationGradle.UC5toUC8("Komal");
-		//Assert Statement
-		assertEquals(Happy, "passwordUserInput");
+		try {			
+			userRegistrationGradle.UC5toUC8(Happy);
+			}	
+		catch(UserRegistrationException e) {
+			//Assert Statement
+			assertEquals("Please enter valid password", e.getMessage());
+			}
 	}
 	
-	public static void UC8PasswordRule4() {
+	public static void UC8PasswordRule4() throws UserRegistrationException {
 		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
 		String passwordUserInput = userRegistrationGradle.UC5toUC8("Komal");
-		//Assert Statement
-		assertEquals(Happy, "passwordUserInput");
+		try {			
+			userRegistrationGradle.UC5toUC8(Happy);
+			}	
+		catch(UserRegistrationException e) {
+			//Assert Statement
+			assertEquals("Please enter valid password", e.getMessage());
+			}
 	}
 	
 	public static void UC9() {
@@ -86,5 +126,6 @@ public class UserRegistrationGradleTest {
 				assertEquals(true, "sampleEmailValidation8");
 				assertEquals(true, "sampleEmailValidation9");				
 	}
+	
 	
 }
