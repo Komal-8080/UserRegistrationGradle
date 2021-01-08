@@ -1,90 +1,63 @@
 package UserRegistrationGradle;
 
+import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistrationGradle {
-	
-	public static String UC1(String firstNameUserInput) throws UserRegistrationException {		
-		Pattern firstName = Pattern.compile("[A-Z]{1}[a-z]{2,}$");  
-		Matcher match = firstName.matcher(firstNameUserInput);  
-		boolean patternValidity = match.matches();
-		try {
-		if (patternValidity == true) 
-			return "HAPPY";
-		else 
-			return "SAD";
-		}
-		catch(NullPointerException e) { 
-			throw new UserRegistrationException("Please enter valid first name");
-		}
-	}
-	
-	public static String UC2(String lastNameUserInput) throws UserRegistrationException {		
-		Pattern lastName = Pattern.compile("[A-Z]{1}[a-z]{2,}$");  
-		Matcher match = lastName.matcher(lastNameUserInput);  
-		boolean patternValidity = match.matches();
-		try {
-		if (patternValidity == true)  
-			return "HAPPY";
-		else 
-			return "SAD";
-		}
-		catch(NullPointerException e) { 
-			throw new UserRegistrationException("Please enter valid last name");
-		}
-	}
-	
-	public static String UC3(String emailUserInput) throws UserRegistrationException {
-		Pattern email = Pattern.compile("^[a-zA-Z]{3}\\.[a-zA-Z]{1,}@[a-zA-Z]{2}\\.[a-zA-Z]{2}\\.[a-zA-Z]{1,}$");  
-		Matcher match = email.matcher(emailUserInput);  
-		boolean patternValidity = match.matches();
-		try {
-		if (patternValidity == true)  
-			return "HAPPY";
-		else 
-			return "SAD";
-		}
-		catch(NullPointerException e) { 
-			throw new UserRegistrationException("Please enter valid Email");
-		}
+
+	public boolean UC1(String firstNameUserInput) throws InvalidInputException {
+		Predicate<String> fName = Pattern.compile("[A-Z]{1}[a-z]{2,}$").asPredicate();
+		System.out.println("Validity of FirstName:" + fName.test(firstNameUserInput));
+		if (fName.test(firstNameUserInput) == true)
+			return true;
+		else
+			throw new InvalidInputException("Enter Valid First Name ");
 	}
 
-	public String UC4(String mobileUserInput) throws UserRegistrationException {
-		Pattern mobileNumber = Pattern.compile("^[1-9]{2}\\s{1}[0-9]{1}[0-9]{9}$");  
-		Matcher match = mobileNumber.matcher(mobileUserInput);  
-		boolean patternValidity = match.matches();
-		try {
-		if (patternValidity == true)  
-			return "HAPPY";
-		else 
-			return "SAD";
-		}
-		catch(NullPointerException e) { 
-			throw new UserRegistrationException("Please enter valid mobile number");
-		}
-	}	
-	
-	public static String UC5toUC8(String passwordUserInput) throws UserRegistrationException {
-		Pattern password = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}");  
-		Matcher match = password.matcher(passwordUserInput);  
-		boolean patternValidity = match.matches();
-		try {
-		if (patternValidity == true)  
-			return "HAPPY";
-		else 
-			return "SAD";
-		}
-		catch(NullPointerException e) { 
-			throw new UserRegistrationException("Please enter valid password");
-		}
+	public boolean UC2(String lastNameUserInput) throws InvalidInputException {
+		Predicate<String> lName = Pattern.compile("[A-Z]{1}[a-z]{2,}$").asPredicate();;
+		System.out.println("Validity of LastName:" + lName.test(lastNameUserInput));
+		if (lName.test(lastNameUserInput) == true)
+			return true;
+		else
+			throw new InvalidInputException("Enter Valid Last Name ");
 	}
-	
+
+	public boolean UC3(String emailUserInput) throws InvalidInputException {
+		Predicate<String> email = Pattern.compile("^[a-zA-Z]{3}\\.[a-zA-Z]{1,}@[a-zA-Z]{2}\\.[a-zA-Z]{2}\\.[a-zA-Z]{1,}$").asPredicate();
+		System.out.println("Validity of user Email:" + email.test(emailUserInput));
+		if (email.test(emailUserInput) == true)
+			return true;
+		else
+			throw new InvalidInputException("Enter Valid Email ");
+	}
+
+	public boolean UC4(String mobileUserInput) throws InvalidInputException {
+		Predicate<String> mobile = Pattern.compile("^[1-9]{2}\\s{1}[0-9]{1}[0-9]{9}$").asPredicate();
+		System.out.println("Validity of Mobile Number:" + mobile.test(mobileUserInput));
+		if (mobile.test(mobileUserInput) == true)
+			return true;
+		else
+			throw new InvalidInputException("Enter Valid Mobile Number ");
+	}
+
+	public boolean UC5toUC8(String passwordUserInput) throws InvalidInputException {
+		Predicate<String> password = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}").asPredicate();
+		System.out.println("Validity of Password:" + password.test(passwordUserInput));
+		if (password.test(passwordUserInput) == true)
+			return true;
+		else
+			throw new InvalidInputException("Enter Valid Password ");
+	}
+
 	public static boolean UC9(String sampleEmailValidation) {
-		Pattern emailValidation = Pattern.compile("^([a-zA-a0-9\\.\\-\\+]+)@([a-zA-Z0-9\\.]{1,5})([a-zA-Z\\.]+){1,3}([a-zA-Z]{1,3})$");  
-		Matcher match = emailValidation.matcher(sampleEmailValidation);  
+		Pattern emailValidation = Pattern
+				.compile("^([a-zA-a0-9\\.\\-\\+]+)@([a-zA-Z0-9\\.]{1,5})([a-zA-Z\\.]+){1,3}([a-zA-Z]{1,3})$");
+		Matcher match = emailValidation.matcher(sampleEmailValidation);
 		boolean patternValidity = match.matches();
+		System.out.println("Validity of Sample Emails:"+patternValidity);
 		return patternValidity;
 	}
-	
+
 }

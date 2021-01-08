@@ -1,110 +1,167 @@
 package UserRegistrationGradle;
 
+import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.util.Scanner;
 
 public class UserRegistrationGradleTest {
-	
-	static String Happy = null;
-	 	
-	public void UC1() throws UserRegistrationException {
-		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
-		String firstNameUserInput = userRegistrationGradle.UC1("Komal");
-		try {			
-			userRegistrationGradle.UC1(Happy);
-			}	
-		catch(UserRegistrationException e) {
-			//Assert Statement
-			assertEquals("Please enter valid first name", e.getMessage());
+
+	@Test
+	public void UC1() {
+		try {
+			try {
+				UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
+				Scanner sc = new Scanner(System.in);
+				System.out.println("Enter FirstName");
+				String fName = sc.nextLine();
+				boolean firstNameUserInput = userRegistrationGradle.UC1(fName);
+				Assert.assertTrue(firstNameUserInput);
+			} catch (NullPointerException e) {
+				e.printStackTrace();
 			}
+		} catch (InvalidInputException e)
+
+		{
+			e.printStackTrace();
+		}
 	}
-	
-	public static void UC2() throws UserRegistrationException {
-		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
-		String lastNameUserInput = userRegistrationGradle.UC2("Shinde");
-		try {			
-			userRegistrationGradle.UC2(Happy);
-			}	
-		catch(UserRegistrationException e) {
-			//Assert Statement
-			assertEquals("Please enter valid last name", e.getMessage());
+
+	@Test
+	public void UC2() {
+		try {
+			try {
+				UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
+				Scanner sc = new Scanner(System.in);
+				System.out.println("Enter LastName");
+				String lName = sc.nextLine();
+				boolean lastNameUserInput = userRegistrationGradle.UC2(lName);
+				Assert.assertTrue(lastNameUserInput);
+			} catch (NullPointerException e) {
+				e.printStackTrace();
 			}
+		} catch (InvalidInputException e)
+
+		{
+			e.printStackTrace();
+		}
 	}
-	
-	public static void UC3() throws UserRegistrationException {
-		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
-		String emailUserInput = userRegistrationGradle.UC3("abc.xyz@bl.co.in");
-		try {			
-			userRegistrationGradle.UC3(Happy);
-			}	
-		catch(UserRegistrationException e) {
-			//Assert Statement
-			assertEquals("Please enter valid email", e.getMessage());
+
+	@Test
+	public void UC3() {
+
+		try {
+			try {
+				UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
+				Scanner sc = new Scanner(System.in);
+				System.out.println("Enter Email");
+				String email = sc.nextLine();
+				boolean emailUserInput = userRegistrationGradle.UC3(email);
+				Assert.assertTrue(emailUserInput);
+			} catch (NullPointerException e) {
+				e.printStackTrace();
 			}
+		} catch (InvalidInputException e)
+
+		{
+			e.printStackTrace();
+		}
 	}
-	
-	public static void UC4() throws UserRegistrationException {
-		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
-		String mobileUserInput = userRegistrationGradle.UC4("91 8562416354");
-		try {			
-			userRegistrationGradle.UC4(Happy);
-			}	
-		catch(UserRegistrationException e) {
-			//Assert Statement
-			assertEquals("Please enter valid mobile number", e.getMessage());
+
+	@Test
+	public void UC4() {
+
+		try {
+			try {
+				UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
+				Scanner sc = new Scanner(System.in);
+				System.out.println("Enter Mobile Number");
+				String mobile = sc.nextLine();
+				boolean mobileUserInput = userRegistrationGradle.UC4(mobile);
+				Assert.assertTrue(mobileUserInput);
+			} catch (NullPointerException e) {
+				e.printStackTrace();
 			}
+		} catch (InvalidInputException e)
+
+		{
+			e.printStackTrace();
+		}
 	}
-	
-	public static void UC5PasswordRule1() throws UserRegistrationException {
-		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
-		String passwordUserInput = userRegistrationGradle.UC5toUC8("Komal");
-		try {			
-			userRegistrationGradle.UC5toUC8(Happy);
-			}	
-		catch(UserRegistrationException e) {
-			//Assert Statement
-			assertEquals("Please enter valid password", e.getMessage());
+
+	@Test
+	public void UC5PasswordRule1() {
+
+		try {
+			try {
+				UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
+				boolean passwordUserInput = userRegistrationGradle.UC5toUC8("Komal@80");
+				Assert.assertTrue(passwordUserInput);
+			} catch (NullPointerException e) {
+				e.printStackTrace();
 			}
+		} catch (InvalidInputException e)
+
+		{
+			e.printStackTrace();
+		}
 	}
-	
-	public static void UC6PasswordRule2() throws UserRegistrationException {
-		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
-		String passwordUserInput = userRegistrationGradle.UC5toUC8("Komal");
-		try {			
-			userRegistrationGradle.UC5toUC8(Happy);
-			}	
-		catch(UserRegistrationException e) {
-			//Assert Statement
-			assertEquals("Please enter valid password", e.getMessage());
+
+	@Test
+	public void UC6PasswordRule2() {
+		try {
+			try {
+				UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
+				boolean passwordUserInput = userRegistrationGradle.UC5toUC8("Komal@80");
+				Assert.assertTrue(passwordUserInput);
+			} catch (NullPointerException e) {
+				e.printStackTrace();
 			}
+		} catch (InvalidInputException e)
+
+		{
+			e.printStackTrace();
+		}
 	}
-	
-	public static void UC7PasswordRule3() throws UserRegistrationException {
-		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
-		String passwordUserInput = userRegistrationGradle.UC5toUC8("Komal");
-		try {			
-			userRegistrationGradle.UC5toUC8(Happy);
-			}	
-		catch(UserRegistrationException e) {
-			//Assert Statement
-			assertEquals("Please enter valid password", e.getMessage());
+
+	@Test
+	public void UC7PasswordRule3() {
+		try {
+			try {
+				UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
+				boolean passwordUserInput = userRegistrationGradle.UC5toUC8("Komal@80");
+				Assert.assertTrue(passwordUserInput);
+			} catch (NullPointerException e) {
+				e.printStackTrace();
 			}
+		} catch (InvalidInputException e)
+
+		{
+			e.printStackTrace();
+		}
 	}
-	
-	public static void UC8PasswordRule4() throws UserRegistrationException {
-		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
-		String passwordUserInput = userRegistrationGradle.UC5toUC8("Komal");
-		try {			
-			userRegistrationGradle.UC5toUC8(Happy);
-			}	
-		catch(UserRegistrationException e) {
-			//Assert Statement
-			assertEquals("Please enter valid password", e.getMessage());
+
+	@Test
+	public void UC8PasswordRule4() {
+
+		try {
+			try {
+				UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
+				boolean passwordUserInput = userRegistrationGradle.UC5toUC8("Komal@10");
+				Assert.assertTrue(passwordUserInput);
+			} catch (NullPointerException e) {
+				e.printStackTrace();
 			}
+		} catch (InvalidInputException e)
+
+		{
+			e.printStackTrace();
+		}
 	}
-	
-	public static void UC9() {
+
+	@Test
+	public void UC9() {
+
 		UserRegistrationGradle userRegistrationGradle = new UserRegistrationGradle();
 		boolean sampleEmailValidation1 = userRegistrationGradle.UC9("abc@yahoo.com");
 		boolean sampleEmailValidation2 = userRegistrationGradle.UC9("abc-100@yahoo.com");
@@ -115,17 +172,16 @@ public class UserRegistrationGradleTest {
 		boolean sampleEmailValidation7 = userRegistrationGradle.UC9("abc@1.com");
 		boolean sampleEmailValidation8 = userRegistrationGradle.UC9("abc@gmail.com.com");
 		boolean sampleEmailValidation9 = userRegistrationGradle.UC9("abc+100@gmail.com");
-		//Assert Statement
-				assertEquals(true, "sampleEmailValidation1");
-				assertEquals(true, "sampleEmailValidation2");
-				assertEquals(true, "sampleEmailValidation3");
-				assertEquals(true, "sampleEmailValidation4");
-				assertEquals(true, "sampleEmailValidation5");
-				assertEquals(true, "sampleEmailValidation6");
-				assertEquals(true, "sampleEmailValidation7");
-				assertEquals(true, "sampleEmailValidation8");
-				assertEquals(true, "sampleEmailValidation9");				
+		// Assert Statement
+		Assert.assertTrue(sampleEmailValidation1);
+		Assert.assertTrue(sampleEmailValidation2);
+		Assert.assertTrue(sampleEmailValidation3);
+		Assert.assertTrue(sampleEmailValidation4);
+		Assert.assertTrue(sampleEmailValidation5);
+		Assert.assertTrue(sampleEmailValidation6);
+		Assert.assertTrue(sampleEmailValidation7);
+		Assert.assertTrue(sampleEmailValidation8);
+		Assert.assertTrue(sampleEmailValidation9);
 	}
-	
-	
+
 }
